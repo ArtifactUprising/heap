@@ -1,5 +1,6 @@
 name: 'heap'
 version: '1.0'
+config-version: 2
 
 source-paths: ["models"]   # paths with source code to compile
 analysis-paths: ["analysis"] # path with analysis files which are compiled, but not run
@@ -10,9 +11,8 @@ data-paths: ["data"]       # load CSVs from this directory with `dbt seed`
 
 require-dbt-version: ">=0.15.0"
 
-models:
+vars:
   heap:
-    vars:
-      users_table:      #schema.table
-      sessions_table:   #schema.table
-      events_table:     #schema.table
+    users_table:      #schema.table
+    sessions_table:   #schema.table
+    events_table:     #schema.table
