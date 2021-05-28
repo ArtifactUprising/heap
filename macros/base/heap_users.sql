@@ -1,6 +1,6 @@
 {% macro heap_users() %}
 
-    {{ adapter_macro('heap.heap_users') }}
+    {{ return(adapter.dispatch('heap_users', packages = dbt_utils._get_utils_namespaces() + ['heap'])()) }}
 
 {% endmacro %}
 

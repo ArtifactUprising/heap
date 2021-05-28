@@ -1,5 +1,7 @@
 {% macro identity_field() %}
-  {{ adapter_macro('heap.identity_field') }}
+
+    {{ return(adapter.dispatch('identity_field', packages = dbt_utils._get_utils_namespaces() + ['heap'])()) }}
+
 {% endmacro %}
 
 {% macro default__identity_field() %}
